@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:if="${#response.getHeader('status')=='ACTIVE'}"  >
+
+<body>
+<!-- Include header.html -->
+<th:block th:include="/headerAdmin"></th:block>
+
+<h2 class="center" style="text-align: center;">Sharings</h2>
+
+
+<div class="row">
+    <div  class="card col-xl-4" th:id="${sharing.id}" th:each="sharing : ${sharings}">
+
+
+        <table>
+
+            <th scope="col-md-4">
+                <img class="card-img-top" alt="" th:src="*{'data:sharing/jpeg;base64,'+{sharing.image}}">
+            </th>
+
+
+
+
+            <tr>
+                <td th:text="${sharing.title}" style="color:red;font-family: 'Anton', sans-serif;width: 100%;"></td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td th:text="${sharing.shortContent}" style="height: fit-content;"></td>
+            </tr>
+
+            <td>
+                <a href="#" class="btn btn-primary" style="margin-bottom: 2rem;">Davam et</a>
+            </td>
+        </table>
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
+
+

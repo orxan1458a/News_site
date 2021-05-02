@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/c37a2e96a6.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+    <style>
+        .center {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        body{
+            font-size: medium;
+            background-color:lightsalmon;
+        }
+
+        .container{
+            position: absolute;
+            top:10%;
+            left:13%;
+            }
+
+        @media only screen and (min-width:1100px){
+            body{
+                background-image: url(https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+
+        @media only screen and (min-width:150px) and (max-width:576px){
+            .container{
+                position: absolute;
+                top:57%;
+                left:0;
+            }
+
+            .btn-danger{
+                margin-top: 2rem;
+            }
+        }
+
+        @media only screen and (min-width:600px) and (max-width:960px){
+            .container{
+                position: absolute;
+                top:10;
+                left:1.5em;
+            }
+        }
+
+        @media only screen and (min-width:1024px) and (max-width:1366px){
+            .container{
+                position: absolute;
+                left:2em;
+            }
+        }
+
+
+    @media  only screen and (min-width:1000px) {
+        .dropdown{
+            position: absolute;
+            right: 0;
+            margin-right: 10rem;
+        }
+
+        .logout{
+            position: absolute;right: 0;
+        }
+
+    }
+
+    </style>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/homeAdmin">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="research.html">All Research <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/social">Social <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-line-fill" viewBox="0 0 16 16">
+                <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2z"/>
+            </svg></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="people.html">People <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+            </svg></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="publications.html">Publications <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+            </svg></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="wiki.html">Wiki <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor-fill" viewBox="0 0 16 16">
+                <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
+            </svg></a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/sharingCreate">Sharing Management <i class="fas fa-share-alt"></i></a>
+        </li>
+
+        <li class="nav-item ">
+            <div class="dropdown">
+                <button type="button" class="btn btn-dark dropdown-toggle " data-toggle="dropdown" style="color:#cccecf;">
+                    Select lang
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#"> <span class="flag-icon flag-icon-az"></span> az </a>
+                    <a class="dropdown-item" href="#"><span class="flag-icon flag-icon-gb"></span> en</a>
+
+                </div>
+            </div>
+        </li>
+
+        <li class="logout nav-item">
+            <a class="nav-link" href="/home1">Logout <i class="fas fa-sign-out-alt"></i></a>
+        </li>
+    </ul>
+</nav>
+
+
+
+
+
+<div class="container alert alert-primary" role="alert">
+
+    <div style="font-family: 'Varela Round', sans-serif;">
+
+        <h2 class="center">Sharing Creation <i class="fas fa-share-alt"></i></h2>
+
+        <form th:action="@{/sharingCreate}"  method="POST" class="center" enctype="multipart/form-data">
+            <div class="center">
+
+                <div>
+                    <input type="text" name="title" class="form-control" id="validationDefault01"  placeholder="Başlıq"  required>
+                </div>
+
+                &nbsp;
+
+
+                <div class="custom-file">
+                    <input type="file" name="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Şəkili seçin</label>
+                </div>
+
+                &nbsp;
+
+                <div>
+                    <input type="text" class="form-control" id="validationDefault02"  name="content" placeholder="Məzmun"  required>
+                </div>
+
+                &nbsp;
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"  id="basic-addon3">Youtube url</span>
+                    </div>
+                    <input type="text" name="url" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                </div>
+
+
+                <button type="submit" value="Submit" class="btn btn-success">Submit <i class="fas fa-check-double"></i></button>
+
+                <button type="reset" value="Reset" class="btn btn-danger">Reset <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-diamond-fill" viewBox="0 0 16 16">
+                    <path d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.614L8 8.708l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.614-.706L7.292 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z"/>
+                </svg></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
